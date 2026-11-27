@@ -49,6 +49,29 @@
       animation: arrive 900ms cubic-bezier(.2,.75,.25,1) both;
     }
 
+    .site-nav {
+      position: absolute;
+      top: 2rem;
+      right: 0;
+      display: flex;
+      gap: .4rem;
+    }
+
+    .site-nav a {
+      padding: .65rem .9rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: .85rem;
+      text-decoration: none;
+      transition: color 160ms ease, border-color 160ms ease;
+    }
+
+    .site-nav a:hover, .site-nav a:focus-visible {
+      border-color: rgba(247, 245, 242, .2);
+      color: var(--ink);
+    }
+
     .eyebrow {
       display: flex;
       align-items: center;
@@ -119,6 +142,7 @@
 
     @media (max-width: 520px) {
       main { width: min(100% - 2.5rem, 900px); }
+      .site-nav { top: 1.25rem; }
       .bottom { align-items: center; margin-top: 2.25rem; }
     }
 
@@ -129,6 +153,10 @@
 </head>
 <body>
   <main>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="profile.html">Profile</a>
+      <a href="contact.html">Contact</a>
+    </nav>
     <p class="eyebrow"><span class="spark" aria-hidden="true"></span>A small beginning</p>
     <h1>Hello,<span>world.</span></h1>
     <div class="bottom">
